@@ -48,3 +48,11 @@ app.get("/hossz", (req, res) => {
         return res.json(result)
     })
 })  
+
+app.delete("/torles", (req,res) =>{
+    const sql = "DELETE FROM `regiok` WHERE RID = ?";
+    db.query(sql, [req.params.id], (err, result) => {
+        if(err) return res.json(err);
+        return res.json(result)
+    })
+});
