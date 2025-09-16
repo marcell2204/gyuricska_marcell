@@ -1,4 +1,25 @@
-const express = require("express");
+const express = require("express")
+const app = express()
+const cors = require("cors")
+const mysql = require("mysql")
+
+
+
+const db = mysql.createConnection({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+})
+
+
+
+
+
+
+
+/*const express = require("express");
 const app = express();
 const cors = require("cors");
 const mysql = require("mysql");
@@ -55,4 +76,4 @@ app.delete("/torles", (req,res) =>{
         if(err) return res.json(err);
         return res.json(result)
     })
-});
+});*/
